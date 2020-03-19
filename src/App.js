@@ -23,6 +23,7 @@ class App extends Component {
   }
 
   handleIncrement = counter => {
+    console.log("App - handleIncrement");
     const counters = [...this.state.counters];
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
@@ -31,6 +32,7 @@ class App extends Component {
   };
 
   handleReset = () => {
+    console.log("App - handleReset");
     const counters = this.state.counters.map(c => {
       c.value = 0;
       return c;
@@ -39,6 +41,7 @@ class App extends Component {
   };
 
   handleDelete = counterId => {
+    console.log("App - handleDelete");
     const counters = this.state.counters.filter(c => c.id !== counterId);
     this.setState({ counters });
   };
